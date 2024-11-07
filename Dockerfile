@@ -29,6 +29,8 @@ RUN R -e 'install.packages("tibble", dependencies=TRUE, repos="http://cran.rstud
     R -e 'library(tibble)'
 RUN R -e 'install.packages("tidyr", dependencies=TRUE, repos="http://cran.rstudio.com/")' && \
     R -e 'library(tidyr)'
+RUN R -e 'install.packages("devtools", dependencies=TRUE, repos="http://cran.rstudio.com/")' && \
+    R -e 'library(devtools)'
 
 RUN apt install -y libbz2-dev
 RUN R -e 'install.packages("BiocManager", dependencies=TRUE, repos="http://cran.rstudio.com/")' && \
